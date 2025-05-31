@@ -5,25 +5,26 @@ BACKEND🔗🔗:
 
 Getting Started------------------------------------------------------------- First, setup the environment:
 
-poetry install
-poetry shell
+    poetry install
+    poetry shell
 By default, we use the OpenAI LLM (though you can customize, see app/context.py). As a result you need to specify an OPENAI_API_KEY in an .env file in this directory.
 
 Example .env file:
 
-OPENAI_API_KEY=<openai_api_key>
+    OPENAI_API_KEY=<openai_api_key>
 Second, generate the embeddings of the documents in the ./data directory (if this folder exists - otherwise, skip this step):
 
-python app/engine/generate.py "To genrate Embedding and for more further information about vector search index ---------See https://github.com/run-llama/mongodb-demo/tree/main?tab=readme-ov-file#create-a-vector-search-index
+    python app/engine/generate.py "To genrate Embedding and for more further information about vector search index ---------
+See https://github.com/run-llama/mongodb-demo/tree/main?tab=readme-ov-file#create-a-vector-search-index
 
 Third, run the development server:
 
-python main.py
+    python main.py
 Then call the API endpoint /api/chat to see the result:
 
-curl --location 'localhost:8000/api/chat' \
---header 'Content-Type: application/json' \
---data '{ "messages": [{ "role": "user", "content": "Hello" }] }'
+    curl --location 'localhost:8000/api/chat' \
+    --header 'Content-Type: application/json' \
+    --data '{ "messages": [{ "role": "user", "content": "Hello" }] }'
 You can start editing the API by modifying app/api/routers/chat.py. The endpoint auto-updates as you save the file.
 Open http://localhost:8000/docs with your browser to see the Swagger UI of the API.
 
@@ -37,10 +38,10 @@ Frontend 🔗🔗:
 
 Getting Started---------------------------- First, install the dependencies:
 
-npm install
+    npm install
 Second, run the development server:
 
-npm run dev
+    npm run dev
 Open http://localhost:3000 with your browser to see the result.
 You can start editing the page by modifying app/page.tsx. The page auto-updates as you edit the file.
 
